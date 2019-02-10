@@ -3,7 +3,7 @@
 
         System.out.print("こんにちは");
 	System.out.print("こんばんは");
-        System.out.print("おはよう")
+        
     }
 
 }
