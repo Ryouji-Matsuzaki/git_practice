@@ -1,0 +1,51 @@
+# クラス
+## クラスの継承
+
+## ■クラスの継承
+
+クラスには、継承という機能があります。継承とは、既存クラスを親クラスとすることで、一切のコーディングをせずとも親クラスの構造をコピーできるものです。
+
+
+　**クラスの継承（extends）：**  
+　　class クラス名 extends 親クラス {  
+　　　　// クラスの定義  
+　　}
+
+```
+// Javaクラスファイル内
+// Humanクラスを継承して、Teacherクラスを宣言
+
+// Humanクラスを継承したので、
+// nameフィールド
+// ageフィールド
+// setHumanメソッド
+// が初期状態で利用可能
+// さらに、kougiメソッドを独自のメソッドとして実装
+class Teacher extends Human {
+    public void kougi() {
+        String msg = "講師の" + this.name + "です。講義を始めます。";
+        System.out.print(msg);
+    }
+}
+```
+
+## ■継承を利用して作成したクラス
+継承を利用して作成したクラスも、普通のクラスと同じ方法で利用します。インスタンスを生成し、ドット演算子でフィールドやメソッドを呼び出します。  
+もちろん、継承元で実装されていたフィールドやメソッドも利用可能です。
+```
+// Javaクラスファイル内
+
+public class Test {
+
+    public static void main(String[] args) {
+        // 継承を利用して作成したTeacherクラスのインスタンスを生成
+        Teacher soeda = new Teacher();
+        // 親クラスに実装されていた、setHumanが利用可能
+        soeda.setHuman("添田亮司", 34);
+        // 親クラスに実装されていた、フィールドも利用可能
+        soeda.age = 30;
+        // Teacherクラス独自のメソッド、kougiももちろん利用可能
+        soeda.kougi();
+    }
+}
+```
